@@ -1,4 +1,4 @@
-const User = require('../models/user.js');
+const User = require('../models/user');
 
 function getUsers(req, res) { // GET all users
   User.find({}, (err, users) => {
@@ -10,45 +10,40 @@ function getUsers(req, res) { // GET all users
 
 function getUserByEmail(req, res) { // GET user by EMAIL
   const { userId } = req.params;
-  User.findOne({email:userId}, (err, user) => {
+  User.findOne({ email: userId }, (err, user) => {
     if (err) return res.status(500).send({ message: `Error ${err}.` });
-    if (!user) return res.status(404).send({ Error: `Error. No users found` });
+    if (!user) return res.status(404).send({ Error: 'Error. No users found' });
     return res.status(200).send(user);
   });
 }
 
-const createUser = async (req, res) => { // POST user
-  const { name, email, password } = req.body
-
-  if (password.length < 4) {
-    return res.status(411).send({ message: `Passwords must be at least 4 characters.` });
-  }
+function createUser(req, res) { // POST user
+  const { name, email, password } = req.body;
 
   // Saving a New User
   const newUser = new User({ name, email, password });
-  newUser.save((err, user) => {
+  newUser.save((err) => {
     if (err) return res.status(500).send(err);
-    return res.status(200).send({ message: `You are registered.` });
-  })
-
+    return res.status(200).send({ message: 'You are registered.' });
+  });
 }
 
 function deleteUser(req, res) { // DELETE user
   const { userId } = req.params;
 
-  User.findOneAndDelete({email:userId}, (err, user) => {
+  User.findOneAndDelete({ email: userId }, (err, user) => {
     if (err) return res.status(500).send({ err });
     if (!user) return res.status(404).send({ message: 'User not found!' });
 
-    return res.status(200).send({ message: `User deleted successfully!` }); 
+    return res.status(200).send({ message: 'User deleted successfully!' });
   });
 }
 
 function updateUser(req, res) { // PATCH user
   const { userId } = req.params;
 
-  User.findOneAndUpdate({email:userId}, req.body, (err, user) => {
-    if (!user) return res.status(404).send({message: 'User not found'});
+  User.findOneAndUpdate({ email: userId }, req.body, (err, user) => {
+    if (!user) return res.status(404).send({ message: 'User not found' });
     if (err) return res.status(500).send({ err });
 
     return res.status(200).send({ message: `User ${user} updated` });
@@ -56,9 +51,9 @@ function updateUser(req, res) { // PATCH user
 }
 
 module.exports = {
-    getUsers,
-    getUserByEmail,
-    createUser,
-    deleteUser,
-    updateUser,
-  };
+  getUsers,
+  getUserByEmail,
+  createUser,
+  deleteUser,
+  updateUser,
+};

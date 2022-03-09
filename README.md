@@ -1,2 +1,6 @@
 # Core-Academy-API
-Proyecto de la rama Backend de Core Academy 2022
+Proyecto de la rama Backend de Core Academy 2022.
+
+- Tareas:
+- [x] Creado directorio "controllers" 
+

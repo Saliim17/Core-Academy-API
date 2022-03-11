@@ -8,11 +8,41 @@ Proyecto de la rama Backend de Core Academy 2022. Se trata de una API simple con
 - [ExpressJS](https://expressjs.com/en/5x/api.html)
 - [MongooseJS](https://mongoosejs.com/docs/api.html)
 # Tareas
-- [x] Creado server.js
-    - [x] Puertos asignados para conectar la base de datos de MongoDB Compass
-- [x] Creado directorio "controllers"
-- [x] Creado directorio "controllers"
-- [x] Creado directorio "controllers"
-- [x] Creado directorio "controllers"
-- [x] Creado directorio "controllers" 
+### Main
+- [x] Crear server.js
+    - [x] Asignar puertos para conectar la base de datos de MongoDB Compass
+    - [x] Trazar la conexión en la terminal con console.log()
+- [x] Crear app.js
+    - [x] Importar y definir de las rutas usadas
+### Rutas    
+- [x] Crear userRoutes.js
+    - [x] Importar y definir los controladores usados
+### Controladores    
+- [x] Crear userController.js
+    - [x] Crear funciones
+        - [x] GET all users
+        - [x] GET user by EMAIL
+        - [x] POST user (create)
+        - [x] DELETE user 
+        - [x] PATCH user (update)
+    - [x] Importar los modelos usados
+### Modelos
+- [x] Crear user.js
+    - [x] Crear un esquema de usuario (Schema) con Mongoose
+        - [x] name
+            - type: String
+            - required: true
+            - unique: true
+            - minlength: 5
+            - maxlength: 50
+        - [x] email
+            - type: String
+            - required: true
+            - unique: true
+            - minlength: 5
+            - maxlength: 50
+        - [x] password:
+            - type: String
+            - required: true
+            - select: false
 

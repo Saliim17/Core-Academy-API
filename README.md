@@ -1,5 +1,5 @@
 # Core-Academy-API
-Proyecto de la rama Backend de Core Academy 2022. Se trata de una API simple construida con NodeJS, MongoDB y con extensiones y frameworks
+Proyecto de la rama Backend de Core Academy 2022. Se trata de una API simple construida con NodeJS, MongoDB. Además se usa ExpressJS y MongooseJS y ESLint, este último para construir el código en un formato [AirBnB](https://github.com/airbnb/javascript).
 
 # Documentación revisada
 - [MongoDB](https://docs.mongodb.com/)

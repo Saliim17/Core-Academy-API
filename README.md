@@ -10,7 +10,7 @@ Proyecto de la rama Backend de Core Academy 2022. Se trata de una API simple con
 # Tareas
 ### Main
 - [x] Crear server.js
-    - [x] Asignar puertos para conectar la base de datos de MongoDB Compass
+    - [x] Asignar puertos para conectar la base de datos de [MongoDB Compass](https://www.mongodb.com/products/compass)
     - [x] Trazar la conexión en la terminal con console.log()
 - [x] Crear app.js
     - [x] Importar y definir de las rutas usadas
